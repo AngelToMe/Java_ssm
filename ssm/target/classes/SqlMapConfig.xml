@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--用于测试Mybatis环境用的XML文件！-->
+
+    <!--配置Mybatis环境-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--扫描单独一个类-->
+        <!--<mapper class="cn.itcast.dao.AccountDao"/>-->
+        <!--扫描包-->
+        <package name="cn.itcast.dao"/>
+    </mappers>
+
+</configuration>
